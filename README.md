@@ -83,6 +83,19 @@ const styles = StyleSheet.create({
 
 ```
 
+
+## Props
+
+| Prop                    |    Type  | Description                                                                 |Required|
+|-------------------------|----------|-----------------------------------------------------------------------------|--------|
+|`dataMenu`               | object   | Is an array of options.Include `tile` , `option`                            |  Yes   |
+|`onPressItem`            | void     | on click select option                                                      |  Yes   |
+|`styleTitle`             | StyleProp     | style text Title                                                       |  no    |
+|`styleViewTitle`         | StyleProp     | style view title                                                       |  no    |
+
+
+
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
