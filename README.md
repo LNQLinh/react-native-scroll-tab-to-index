@@ -11,7 +11,7 @@ yarn install react-native-scroll-tab-to-index
 ```
 ## Modal
 
-<img src="src/Image/demo.gif" height="400px" style="margin-left:10px" />
+<img src="src/image/demo.gif" height="400px" style="margin-left:10px" />
 
 ## Usage
 
