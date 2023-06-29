@@ -43,6 +43,7 @@ export const ScrollIntoView = function ScrollIntoView(props: ScrollIntoViewProps
   }
 
   const getItemLayout = (data:any, index:any) => {
+    if(data){}
     return {
       length: configs.windowWidth / 3.5 - 20,
       offset: (configs.windowWidth / 3.5) * index,
