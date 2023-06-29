@@ -30,7 +30,7 @@ export interface ScrollTabProps {
 
 
 export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
-  const [dataSourceCords, setDataSourceCords] = React.useState([]);
+  const [dataSourceCords, setDataSourceCords] = React.useState<Array<number>>([]);
   const { style, onPressItem, dataMenu, styleTitle,styleViewTitle } = props;
   const styles = Object.assign({}, $container, style);
   const stylesTitle = Object.assign({}, $title, styleTitle);
@@ -39,7 +39,7 @@ export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
   return (
     <View style={styles}>
       <ScrollIntoView dataHeader={dataMenu} dataLengthView={dataSourceCords}>
-        {dataMenu.map((item: any, index: any) => {
+        {dataMenu.map((item: any, index: number) => {
           return (
             <View
               onLayout={(event) => {
@@ -47,7 +47,6 @@ export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
                 const layout = event.nativeEvent.layout;
                 dataSourceCords[index] = layout.y;
                 // set vào mảng
-                console.log('---dataSourceCords', dataSourceCords);
                 setDataSourceCords(dataSourceCords);
               }}
             >

@@ -32,8 +32,8 @@ export const ScrollIntoView = function ScrollIntoView(props: ScrollIntoViewProps
   const { style, dataLengthView, dataHeader, children } = props
   const styles = Object.assign({}, CONTAINER, style)
 
-  const ref = useRef(null)
-  const refHead = useRef(null)
+  const ref = useRef<any>(null)
+  const refHead = useRef<any>(null)
   const [indexCurrent, setIndexCurrent] = useState(0)
 
   //scroll đến vị trí của title
@@ -52,8 +52,6 @@ export const ScrollIntoView = function ScrollIntoView(props: ScrollIntoViewProps
 
   // xử lý scroll đến từng vị trí
   const scrollHandler = (index:any) => {
-    // console.log("index", index)
-    // console.log(dataLengthView.length, index)
     if (dataLengthView.length >= index) {
       ref.current.scrollTo({
         x: 0,
@@ -64,10 +62,10 @@ export const ScrollIntoView = function ScrollIntoView(props: ScrollIntoViewProps
   }
 
   // xử lý scroll
-  const handleScroll = (event) => {
+  const handleScroll = (event:any) => {
     // console.log("event", event.nativeEvent.contentOffset.y)
     //tìm vị trí trùng
-    const dtIndex = dataLengthView.findIndex((e) => e <= event.nativeEvent.contentOffset.y)
+    const dtIndex = dataLengthView.findIndex((e:any) => e <= event.nativeEvent.contentOffset.y)
     // console.log("data index ", dtIndex)
     // nếu vị trí bằng 0 thì thực hiện câu điều kiện if để scroll theo từng title, còn không bằngg thì
     if (dtIndex == 0) {
