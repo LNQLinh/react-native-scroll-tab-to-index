@@ -7,7 +7,7 @@ HN
 ```sh
 npm install react-native-scroll-tab-to-index
 
-yarn install react-native-scroll-tab-to-index
+yarn add react-native-scroll-tab-to-index
 ```
 ## Modal
 
