@@ -15,7 +15,7 @@ const CONTAINER: ViewStyle = {
   flex: 1,
 }
 
-export interface ScrollIntoViewProps {
+export interface ScrollIntoProps {
   /**
    * An optional style override useful for padding & margin.
    */
@@ -28,7 +28,7 @@ export interface ScrollIntoViewProps {
 /**
  * Describe your component here
  */
-export const ScrollIntoView = function ScrollIntoView(props: ScrollIntoViewProps) {
+export const ScrollInto = function ScrollInto(props: ScrollIntoProps) {
   const { style, dataLengthView, dataHeader, children } = props
   const styles = Object.assign({}, CONTAINER, style)
 

@@ -6,7 +6,7 @@ import {
   ViewStyle,
   Text,
 } from 'react-native';
-import { ScrollIntoView } from './scroll-into-view';
+import { ScrollInto } from './scrollInto';
 import { color } from './color';
 import type { TextStyle } from 'react-native';
 
@@ -38,10 +38,11 @@ export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
 
   return (
     <View style={styles}>
-      <ScrollIntoView dataHeader={dataMenu} dataLengthView={dataSourceCords}>
+      <ScrollInto dataHeader={dataMenu} dataLengthView={dataSourceCords}>
         {dataMenu.map((item: any, index: number) => {
           return (
             <View
+              key={index}
               onLayout={(event) => {
                 // lấy ra vị của view
                 const layout = event.nativeEvent.layout;
@@ -53,9 +54,9 @@ export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
               <View style={stylesViewTitle}>
                 <Text style={[stylesTitle]}>{item.tile}</Text>
               </View>
-              {item.option.map((title: any, index: any) => (
+              {item.option.map((title: any, indexOption: any) => (
                 <TypeSelect
-                  key={index}
+                  key={indexOption}
                   title={title}
                   onSelect={() => onPressItem(title)}
                 />
@@ -63,7 +64,7 @@ export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
             </View>
           );
         })}
-      </ScrollIntoView>
+      </ScrollInto>
     </View>
   );
 };
