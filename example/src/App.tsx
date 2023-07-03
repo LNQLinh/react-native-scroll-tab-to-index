@@ -41,6 +41,32 @@ const DATA_MENU = [
       </View>,
     ],
   },
+  {
+    id: 3,
+    tile: 'Title 3',
+    option: [
+      'Option 1',
+      <View>
+        <Text style={$textTwo}>Option 2</Text>
+      </View>,
+      <View>
+        <Text style={$text}>Option 3</Text>
+      </View>,
+    ],
+  },
+  {
+    id: 4,
+    tile: 'Title 4',
+    option: [
+      'Option 1',
+      <View>
+        <Text style={$textTwo}>Option 2</Text>
+      </View>,
+      <View>
+        <Text style={$text}>Option 3</Text>
+      </View>,
+    ],
+  },
 ];
 
 export default function App() {

@@ -10,6 +10,7 @@ import {
 } from "react-native"
 import { color } from "./color"
 import configs from "./configs"
+import type { TextStyle } from "react-native"
 
 const CONTAINER: ViewStyle = {
   flex: 1,
@@ -19,7 +20,8 @@ export interface ScrollIntoProps {
   /**
    * An optional style override useful for padding & margin.
    */
-  style?: StyleProp<ViewStyle>
+  styleInto?: StyleProp<ViewStyle>
+  styleTextInto?:StyleProp<TextStyle>
   dataHeader: any
   children: React.ReactNode
   dataLengthView: any
@@ -29,8 +31,8 @@ export interface ScrollIntoProps {
  * Describe your component here
  */
 export const ScrollInto = function ScrollInto(props: ScrollIntoProps) {
-  const { style, dataLengthView, dataHeader, children } = props
-  const styles = Object.assign({}, CONTAINER, style)
+  const { styleInto, dataLengthView, dataHeader, children ,styleTextInto} = props
+  const styles = Object.assign({}, CONTAINER, styleInto)
 
   const ref = useRef<any>(null)
   const refHead = useRef<any>(null)
@@ -104,7 +106,7 @@ export const ScrollInto = function ScrollInto(props: ScrollIntoProps) {
                 scrollHandler(index + 1)
               }}
             >
-              <Text style={indexCurrent == index && { color: color.mainColor }} >{item.tile}</Text>
+              <Text style={[indexCurrent == index && { color: color.mainColor },styleTextInto]} >{item.tile}</Text>
             </TouchableOpacity>
           )}
         />

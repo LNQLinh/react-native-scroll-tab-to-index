@@ -20,7 +20,8 @@ const $container: ViewStyle = {
 
 
 export interface ScrollTabProps {
-
+  styleInto?: StyleProp<ViewStyle>
+  styleTextInto?:StyleProp<TextStyle>
   style?: StyleProp<ViewStyle>;
   styleTitle?: StyleProp<TextStyle>;
   styleViewTitle?: StyleProp<ViewStyle>
@@ -31,14 +32,14 @@ export interface ScrollTabProps {
 
 export const ScrollTab = function ScrollTab(props: ScrollTabProps) {
   const [dataSourceCords, setDataSourceCords] = React.useState<Array<number>>([]);
-  const { style, onPressItem, dataMenu, styleTitle,styleViewTitle } = props;
+  const { style, onPressItem, dataMenu, styleTitle,styleViewTitle,styleInto,styleTextInto } = props;
   const styles = Object.assign({}, $container, style);
   const stylesTitle = Object.assign({}, $title, styleTitle);
   const stylesViewTitle = Object.assign({}, $viewTitle, styleViewTitle);
 
   return (
     <View style={styles}>
-      <ScrollInto dataHeader={dataMenu} dataLengthView={dataSourceCords}>
+      <ScrollInto dataHeader={dataMenu} dataLengthView={dataSourceCords} styleInto={styleInto} styleTextInto={styleTextInto}>
         {dataMenu.map((item: any, index: number) => {
           return (
             <View
